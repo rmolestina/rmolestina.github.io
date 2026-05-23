@@ -52,6 +52,11 @@
       text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--terra); }
+    .portal-link {
+      color: var(--terra) !important; border: 1px solid var(--terra);
+      padding: 0.4rem 1rem !important; white-space: nowrap;
+    }
+    .portal-link:hover { background: var(--terra); color: var(--warm-white) !important; }
 
     /* HERO */
     #hero {
@@ -293,7 +298,8 @@
       #values, #contact { padding: 4rem 2rem; }
     }
     @media (max-width: 600px) {
-      .nav-links { display: none; }
+      .nav-links { display: flex; }
+      .nav-links li:not(:last-child) { display: none; }
       .values-grid { grid-template-columns: 1fr; }
       .hero-heading { font-size: 2.4rem; }
     }
@@ -310,7 +316,7 @@
     <li><a href="#rates">Rates</a></li>
     <li><a href="#offerings">Offerings</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" style="color:var(--terra); border: 1px solid var(--terra); padding: 0.4rem 1rem;">Client Portal</a></li>
+    <li><a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" class="portal-link">Client Portal</a></li>
   </ul>
 </nav>
 
