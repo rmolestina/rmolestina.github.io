@@ -185,22 +185,19 @@
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 3rem;
     }
     .value-card {
-      padding: 2rem; border: 1px solid rgba(181,103,60,0.25);
-      background: rgba(181,103,60,0.2);
+      padding: 2rem; border: 1px solid rgba(181,196,168,0.2);
+      background: var(--sage);
       transition: border-color 0.3s, background 0.3s;
     }
-    .value-card:hover { border-color: var(--terra-pale); background: rgba(181,103,60,0.3); }
+    .value-card:hover { border-color: var(--sage-light); background: var(--sage-dark); }
     .value-title {
       font-family: 'Cormorant Garamond', serif; font-size: 1.25rem;
       font-weight: 400; color: var(--terra-pale); margin-bottom: 0.75rem;
     }
-    .value-body { font-size: 0.88rem; color: rgba(245,240,232,0.72); line-height: 1.75; }
+    .value-body { font-size: 0.88rem; color: rgba(245,240,232,0.85); line-height: 1.75; }
 
     /* RATES */
     #rates { background: var(--terra-pale); }
-    .rates-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0 2rem;
-    }
     .rate-card { background: var(--warm-white); padding: 2.5rem 2rem; text-align: center; }
     .rate-card.featured { background: var(--bark); color: var(--cream); }
     .rate-label {
@@ -218,12 +215,13 @@
     .rate-total { margin-top: 1rem; font-size: 0.82rem; color: var(--bark-mid); }
     .rate-card.featured .rate-total { color: rgba(245,240,232,0.7); }
     .rates-notes { margin-top: 1rem; }
+    .insurance-box { margin-top: 2rem; padding: 1.5rem 2rem; background: var(--warm-white); }
     .sliding-scale-box { margin-top: 1.5rem; padding: 1.5rem 2rem; background: var(--warm-white); }
     .sliding-scale-box p {
       font-size: 0.9rem; color: var(--bark-mid); margin-bottom: 0;
     }
     .sliding-scale-box strong { color: var(--bark); font-weight: 400; }
-    .insurance-box { margin-top: 0.5rem; padding: 1.5rem 2rem; background: var(--warm-white); }
+    .rates-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0 0; }
     .carriers-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
     .carrier-tag {
       font-size: 0.78rem; padding: 0.3rem 0.9rem;
@@ -449,6 +447,24 @@
 <section id="rates">
   <span class="section-label">Rates &amp; Insurance</span>
   <h2 class="section-heading">Transparent, equitable pricing</h2>
+  <div class="insurance-box">
+    <span class="cred-label">Insurance Accepted</span>
+    <div class="carriers-list">
+      <span class="carrier-tag">Aetna</span>
+      <span class="carrier-tag">Anthem</span>
+      <span class="carrier-tag">BCBS</span>
+      <span class="carrier-tag">Cigna</span>
+      <span class="carrier-tag">Optum</span>
+      <span class="carrier-tag">Premera</span>
+      <span class="carrier-tag">Regence</span>
+      <span class="carrier-tag">United</span>
+      <span class="carrier-tag">+ more</span>
+    </div>
+  </div>
+  <div class="sliding-scale-box">
+    <span class="cred-label">Sliding Fee Scale</span>
+    <p>Healthcare access and equity are core values of mine. I reserve a limited number of spots for clients in need of a sliding fee. Please reach out to discuss availability.</p>
+  </div>
   <div class="rates-grid">
     <div class="rate-card">
       <p class="rate-label">Single Session</p>
@@ -468,24 +484,6 @@
       <p class="rate-total">$1,250 total</p>
     </div>
   </div>
-  <div class="sliding-scale-box">
-    <span class="cred-label">Sliding Fee Scale</span>
-    <p>Healthcare access and equity are core values of mine. I reserve a limited number of spots for clients in need of a sliding fee. Please reach out to discuss availability.</p>
-  </div>
-  <div class="insurance-box">
-    <span class="cred-label">Insurance Accepted</span>
-    <div class="carriers-list">
-      <span class="carrier-tag">Aetna</span>
-      <span class="carrier-tag">Anthem</span>
-      <span class="carrier-tag">BCBS</span>
-      <span class="carrier-tag">Cigna</span>
-      <span class="carrier-tag">Optum</span>
-      <span class="carrier-tag">Premera</span>
-      <span class="carrier-tag">Regence</span>
-      <span class="carrier-tag">United</span>
-      <span class="carrier-tag">+ more</span>
-    </div>
-  </div>
 </section>
 
 <!-- OFFERINGS -->
@@ -502,7 +500,7 @@
     <div class="offering-card" style="cursor:default;">
       <div class="offering-icon">&#127911;</div>
       <p class="offering-title">Guided Meditations</p>
-      <p class="offering-desc">Somatic and embodiment-based guided meditations coming soon to Insight Timer &mdash; rooted in resilience, healing justice, and the wisdom of the body.</p>
+      <p class="offering-desc">Somatic guided meditations coming soon to Insight Timer &mdash; rooted in resilience, healing justice, and the wisdom of the body.</p>
       <span class="offering-link" style="opacity:0.5;">Coming Soon on Insight Timer</span>
     </div>
   </div>
