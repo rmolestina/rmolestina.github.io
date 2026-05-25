@@ -78,7 +78,10 @@
       font-weight: 300; line-height: 1.15; color: var(--bark); margin-bottom: 2rem;
     }
     .hero-heading em { font-style: italic; color: var(--terra); }
-    .hero-sub {
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+      color: var(--terra); font-style: italic; margin-bottom: 1.5rem; line-height: 1.5;
+    }
       font-size: 1rem; color: var(--bark-mid);
       max-width: 420px; margin-bottom: 3rem; line-height: 1.8;
     }
@@ -143,7 +146,8 @@
     /* THERAPY */
     #therapy {
       background: var(--sage);
-      display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start;
+      display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: start;
+      row-gap: 1.5rem;
     }
     #therapy .section-label { color: var(--terra-pale); }
     #therapy .section-heading { color: var(--warm-white); }
@@ -153,10 +157,11 @@
     #therapy .btn:hover { background: var(--bark); }
     .therapy-right { background: var(--sage-dark); padding: 2.5rem; }
     .therapy-right .section-label { color: var(--sage-light); }
-    .therapy-right .cred-item {
-      border-bottom-color: rgba(181,196,168,0.2);
-      color: rgba(250,247,242,0.82);
+    .therapy-bottom-lists .cred-item {
+      border-bottom-color: rgba(181,196,168,0.3);
+      color: rgba(250,247,242,0.85);
     }
+    .therapy-bottom-lists .section-label { color: var(--sage-light); }
     .approach-box { margin-top: 2.5rem; padding: 1.8rem; background: var(--sage-light); }
     .approach-box .cred-label { color: var(--sage-dark); margin-top: 0; }
     .approach-box p { font-size: 0.88rem; color: var(--bark); line-height: 1.9; }
@@ -252,6 +257,16 @@
     }
     .offering-link::after { content: '\2192'; }
 
+    /* FAQ */
+    #faq { background: var(--linen); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
+    .faq-item { padding: 2rem; background: var(--warm-white); }
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+      color: var(--bark); margin-bottom: 0.75rem; font-weight: 500;
+    }
+    .faq-a { font-size: 0.9rem; color: var(--bark-mid); line-height: 1.8; }
+
     /* CONTACT */
     #contact { background: var(--cream); text-align: center; padding: 6rem; }
     .contact-inner { max-width: 600px; margin: 0 auto; }
@@ -298,7 +313,7 @@
     @media (max-width: 600px) {
       .nav-links { display: flex; }
       .nav-links li:not(:last-child) { display: none; }
-      .values-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
       .hero-heading { font-size: 2.4rem; }
     }
   </style>
@@ -313,6 +328,7 @@
     <li><a href="#values">Values</a></li>
     <li><a href="#rates">Rates</a></li>
     <li><a href="#offerings">Offerings</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" class="portal-link">Client Portal</a></li>
   </ul>
@@ -325,8 +341,9 @@
     <h1 class="hero-heading">
       Healing that honors <em>body, mind &amp; heart</em>
     </h1>
+    <p class="hero-tagline">Embodied, justice-rooted therapy for those ready to come home to themselves.</p>
     <p class="hero-sub">
-      Partnering with individuals and groups to grow our innate resilience and support healing from individual, collective, and intergenerational trauma &mdash; through somatic, integrative, and justice-informed care.
+      Partnering with individuals, organizations, and groups to grow our innate resilience and support healing from individual, collective, and intergenerational trauma &mdash; through somatic, integrative, and justice-informed care.
     </p>
     <div class="hero-btns">
       <a href="#contact" class="btn">Get in Touch</a>
@@ -349,20 +366,9 @@
     <p>Oftentimes we can't think our way to wellness. This is where taking a more integrative and holistic approach can help us lean into the wisdom inherent in the body &mdash; where our long-held patterns are stored.</p>
     <p>Somatic therapy attends to the wisdom of the body — the sensations, breath, and felt sense that often hold what words may not yet reach. I weave these practices into our work together as they serve your healing.</p>
     <p style="margin-top:2rem; font-style:italic; color:var(--bark-mid); font-size:0.95rem;">Currently offering sessions online to clients in Washington State.</p>
-    <a href="#contact" class="btn" style="margin-top:2rem;">Reach Out to Start</a>
   </div>
   <div class="therapy-right">
-    <span class="section-label">Who I Work With</span>
-    <div style="margin-top:1.5rem;">
-      <div class="cred-item">BIPOC communities</div>
-      <div class="cred-item">LGBTQ+ individuals</div>
-      <div class="cred-item">Trauma survivors &mdash; individual, collective, and intergenerational</div>
-      <div class="cred-item">Those navigating grief, loss, or life transitions</div>
-      <div class="cred-item">People exploring somatics and mind-body healing</div>
-      <div class="cred-item">Those healing from sexual trauma</div>
-      <div class="cred-item">Individuals exploring gender and sexuality</div>
-    </div>
-    <div class="approach-box">
+    <div class="approach-box" style="margin-top:0;">
       <span class="cred-label">Therapy Approach</span>
       <div>
         <span class="approach-item">Somatic &amp; trauma-informed</span>
@@ -371,6 +377,39 @@
         <span class="approach-item">IFS</span>
         <span class="approach-item">Mind-body integration</span>
         <span class="approach-item">Social justice oriented</span>
+      </div>
+    </div>
+    <div class="approach-box">
+      <span class="cred-label">Free 20-Minute Consultation</span>
+      <p style="font-size:0.88rem; color:rgba(250,247,242,0.85); margin-top:0.5rem;">Not sure if we're a good fit? Reach out for a free 20-minute consultation — no commitment required.</p>
+      <a href="#contact" class="btn" style="margin-top:1rem; display:inline-block;">Get in Touch</a>
+    </div>
+  </div>
+  <div class="therapy-bottom-lists" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 0; background: var(--sage-dark); padding: 2rem;">
+    <div>
+      <span class="section-label" style="color:var(--sage-light);">Who I Work With</span>
+      <div style="margin-top:1rem;">
+        <div class="cred-item">BIPOC communities</div>
+        <div class="cred-item">LGBTQ+ individuals</div>
+        <div class="cred-item">Trauma survivors &mdash; individual, collective, and intergenerational</div>
+        <div class="cred-item">Those navigating grief, loss, or life transitions</div>
+        <div class="cred-item">People exploring somatics and mind-body healing</div>
+        <div class="cred-item">Those healing from sexual trauma</div>
+        <div class="cred-item">Individuals exploring gender and sexuality</div>
+      </div>
+    </div>
+    <div>
+      <span class="section-label" style="color:var(--sage-light);">What we might explore together</span>
+      <div style="margin-top:1rem;">
+        <div class="cred-item">Trauma and complex trauma</div>
+        <div class="cred-item">The weight of racial oppression</div>
+        <div class="cred-item">Wounds carried across generations</div>
+        <div class="cred-item">Ruptures in connection and trust</div>
+        <div class="cred-item">Grief and loss</div>
+        <div class="cred-item">Life transitions</div>
+        <div class="cred-item">Sexual trauma</div>
+        <div class="cred-item">Identity and sense of self</div>
+        <div class="cred-item">Stress and burnout</div>
       </div>
     </div>
   </div>
@@ -498,11 +537,60 @@
       <p class="offering-desc">An online course for healthcare providers exploring our relationship with the nervous system as a path to liberation &mdash; reclaiming the body as a source of internal wisdom and justice, so we can better regulate our stress responses, build capacity for the work, and stay responsive to our own needs and those of the communities we serve. 2 CEs available for nurses upon completion.</p>
       <span class="offering-link">Explore the Course</span>
     </a>
+    <a href="https://vimeo.com/1159828048" target="_blank" rel="noopener" class="offering-card">
+      <div class="offering-icon">&#127909;</div>
+      <p class="offering-title">Panel Recording</p>
+      <p class="offering-desc">A panel conversation on burnout at the intersections of race, justice, and behavioral health — exploring how systems of oppression impact the wellbeing of providers and the communities we serve.</p>
+      <span class="offering-link">Watch the Recording</span>
+    </a>
+    <a href="#contact" class="offering-card">
+      <div class="offering-icon">&#127775;</div>
+      <p class="offering-title">Workshops &amp; Consultation</p>
+      <p class="offering-desc">Workshops and consultation for organizations and groups ready to align their values with action — exploring embodied resilience, nervous system awareness, and justice as an integrated practice. Rooted in the belief that the body is both a site of healing and a source of wisdom, this work supports individuals and communities in building the capacity to transform — not just endure.</p>
+      <span class="offering-link">Get in Touch</span>
+    </a>
     <div class="offering-card" style="cursor:default;">
       <div class="offering-icon">&#127911;</div>
       <p class="offering-title">Guided Meditations</p>
       <p class="offering-desc">Somatic guided meditations coming soon to Insight Timer &mdash; rooted in resilience, healing justice, and the wisdom of the body.</p>
       <span class="offering-link" style="opacity:0.5;">Coming Soon on Insight Timer</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <span class="section-label">Common Questions</span>
+  <h2 class="section-heading">Frequently asked questions</h2>
+  <div class="divider"></div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <p class="faq-q">Is therapy right for me?</p>
+      <p class="faq-a">If you're here, something in you is probably already reaching toward healing. You don't need to be in crisis to benefit from therapy — curiosity, a desire to understand yourself more deeply, or a feeling that something isn't quite working are all good enough reasons to begin.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What can I expect from our first session?</p>
+      <p class="faq-a">Our first session is a chance for us to get to know each other. I'll ask about what brings you in and what you're hoping for, and you're welcome to ask me anything too. There's no pressure to share more than feels right — we go at your pace.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do you offer a free consultation?</p>
+      <p class="faq-a">Yes — I offer a free 20-minute phone consultation so we can get a sense of whether we might be a good fit. No commitment required.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What is somatic therapy and how is it different?</p>
+      <p class="faq-a">Somatic therapy works with the body as a source of wisdom and healing — not just the mind. Rather than only talking about experiences, we also pay attention to what lives in the body: sensations, breath, posture, and felt sense. This can be especially powerful for trauma, which often lives below the level of words.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do I have to talk about everything?</p>
+      <p class="faq-a">Never. Consent is central to how I work. You decide what we explore and when. Healing doesn't require you to revisit anything before you're ready — and sometimes it doesn't require revisiting it at all.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How long will I be in therapy?</p>
+      <p class="faq-a">That depends on you and what you're working toward. Some people come for a focused period around a specific challenge. Others find value in longer-term work — and as you connect more with your inner wisdom, we'll explore together how to carry what you've built beyond our sessions.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do you offer workshops or consultation for organizations?</p>
+      <p class="faq-a">Yes — I work with organizations and groups ready to align their values with action through embodied resilience and justice-informed workshops and consultation. Reach out to start a conversation about what might serve your community.</p>
     </div>
   </div>
 </section>
@@ -524,7 +612,7 @@
 </section>
 
 <footer>
-  <p>Rita M. Molestina, LCSW &middot; Licensed Clinical Social Worker &middot; Washington State</p>
+  <p>Rita M. Molestina, LCSW &middot; Licensed Clinical Social Worker &middot; Washington State &middot; License #LW61032449</p>
   <p style="margin-top:0.5rem;">This website is for informational purposes only and does not constitute a therapeutic relationship.</p>
   <p style="margin-top:1rem;"><a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" style="color:rgba(245,240,232,0.6); text-decoration:none; letter-spacing:0.1em; font-size:0.75rem; text-transform:uppercase;">Client Portal &rarr;</a></p>
 </footer>
