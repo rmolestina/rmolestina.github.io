@@ -57,6 +57,36 @@
       padding: 0.4rem 1rem !important; white-space: nowrap;
     }
     .portal-link:hover { background: var(--terra); color: var(--warm-white) !important; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 0.4rem;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--bark); transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 57px; left: 0; right: 0;
+      background: rgba(250,247,242,0.98); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(181,103,60,0.12);
+      padding: 1.5rem 2rem; z-index: 99; flex-direction: column; gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--bark-mid); text-decoration: none; padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(181,103,60,0.08);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--terra); }
+    .mobile-menu .portal-link {
+      margin-top: 1rem; text-align: center; border: 1px solid var(--terra) !important;
+      padding: 0.6rem 1rem !important;
+    }
 
     /* HERO */
     #hero {
@@ -317,8 +347,8 @@
       #values, #contact { padding: 4rem 2rem; }
     }
     @media (max-width: 600px) {
-      .nav-links { display: flex; }
-      .nav-links li:not(:last-child) { display: none; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
       .faq-grid { grid-template-columns: 1fr; }
       .hero-heading { font-size: 2.4rem; }
       .values-grid { grid-template-columns: 1fr; }
@@ -342,7 +372,21 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" class="portal-link">Client Portal</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#therapy" class="mobile-link">Therapy</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#values" class="mobile-link">Values</a>
+  <a href="#rates" class="mobile-link">Rates</a>
+  <a href="#offerings" class="mobile-link">Offerings</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" class="portal-link mobile-link">Client Portal</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -612,5 +656,22 @@
   <p style="margin-top:1rem;"><a href="https://rita-molestina.clientsecure.me/sign-in" target="_blank" rel="noopener" style="color:rgba(245,240,232,0.6); text-decoration:none; letter-spacing:0.1em; font-size:0.75rem; text-transform:uppercase;">Client Portal &rarr;</a></p>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
